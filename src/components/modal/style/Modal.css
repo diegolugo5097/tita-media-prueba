@@ -1,0 +1,56 @@
+.comments {
+  display: flex;
+  justify-content: center;
+  padding: 5px;
+}
+
+.close_modal {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  cursor: pointer;
+}
+
+.card_owner_picture {
+  border-radius: 50%;
+  margin: 0px 0px 10px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.no_comments {
+  font-size: 30px;
+  text-align: center;
+  margin-top: 20%;
+}
+
+.close_icon {
+  margin: 0px 0px 14px 0px;
+  width: 3%;
+}
+
+.comment_message {
+  border: none;
+  padding: 30px;
+  font-style: italic;
+  display: flex;
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  background-color: white;
+}
+
+#image_profile {
+  border-radius: 50%;
+}
+
+.comment_message span {
+  width: 100%;
+  margin: auto;
+  text-align: center;
+}
+
+.comment_message h6 {
+  width: 11%;
+  margin: auto;
+  padding: 10px;
+}

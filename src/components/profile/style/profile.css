@@ -1,0 +1,14 @@
+.pitureProfile {
+  border-radius: 50%;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.infoProfile {
+  display: flex;
+  padding: 10px;
+  gap: 20px;
+}
+
+.nameProfile {
+  margin: auto;
+}
