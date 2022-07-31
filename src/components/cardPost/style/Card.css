@@ -4,6 +4,20 @@
   box-sizing: border-box;
 }
 
+.no_post_alert {
+  width: 100%;
+  text-align: center;
+  margin: 10px;
+}
+
+.no_post_alert span {
+  background: #fff3cd;
+  text-align: center;
+  padding: 10px;
+  border: 1px solid #ffc200;
+  border-radius: 10px;
+}
+
 .main {
   max-width: 1200px;
   margin: 0 auto;

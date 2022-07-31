@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const comments = (id, setResponse, setError) => {
+const getComments = (id, setResponse, setError) => {
   axios
     .get(`https://dummyapi.io/data/v1/post/${id}/comment?limit=10`, {
       headers: {
@@ -13,4 +13,4 @@ const comments = (id, setResponse, setError) => {
     .catch((err) => setError(err));
 };
 
-export default comments;
+export default getComments;

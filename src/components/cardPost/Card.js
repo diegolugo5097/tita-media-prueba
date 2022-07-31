@@ -1,8 +1,9 @@
 import "./style/Card.css";
 import "./../modal/style/Modal.css";
-import posting from "../../api/getPost";
+import getPost from "../../api/getPost";
 import { useCallback, useEffect, useState } from "react";
 import like from "./../../assets/images/thumb-up.png";
+import warning from "./../../assets/images/warning.png";
 import Tag from "../tag/Tag";
 import Modal from "../modal/Modal";
 import { stateIsOpenModal, stateTag } from "./../../recoil/atoms";
@@ -17,19 +18,23 @@ const Card = () => {
   const [isOpen, setIsOpen] = useRecoilState(stateIsOpenModal);
   const [isTag] = useRecoilState(stateTag);
   const [isOpenProfile, setIsOpenProfile] = useState(false);
+  const [alertNoPost, setAlertNoPost] = useState(true);
 
   const setResponse = useCallback((res) => {
     if (res.data.data.length > 0) {
       setControl(true);
       setData(res.data.data);
     } else {
-      console.log("No hay informacion");
+      setAlertNoPost(false);
+      setTimeout(() => {
+        setAlertNoPost(true);
+      }, 3000);
     }
   }, []);
 
   useEffect(() => {
     if (!control) {
-      posting(setResponse, setError);
+      getPost(setResponse, setError);
     }
   }, [control, setResponse]);
 
@@ -54,6 +59,11 @@ const Card = () => {
   return (
     <>
       <Tag />
+      <div className="no_post_alert" hidden={alertNoPost}>
+        <span>
+          <img src={warning} alt="warning-icon" /> No post found with this tag
+        </span>
+      </div>
       <div className="main">
         <ul className="cards">
           {data.map((post, index) => (

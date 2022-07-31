@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { stateIsOpenModal } from "./../../recoil/atoms";
 import { useRecoilState } from "recoil";
 import close from "./../../assets/images/close.png";
-import comments from "../../api/getComments";
+import getComments from "../../api/getComments";
 import ModalComments from "../modalComments/ModalComments";
 import ModalProfile from "../modalProfile/ModalProfile";
 
@@ -48,7 +48,7 @@ const ModalPost = ({
         }
         setData(res.data.data);
       };
-      comments(id, setResponse, setError);
+      getComments(id, setResponse, setError);
     }
   }, [id, isOpenModal, isComments]);
 

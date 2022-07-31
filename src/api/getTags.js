@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const tags = (setResponse, setError) => {
+const getTags = (setResponse, setError) => {
   axios
     .get("https://dummyapi.io/data/v1/tag?limit=5", {
       headers: {
@@ -13,4 +13,4 @@ const tags = (setResponse, setError) => {
     .catch((err) => setError(err));
 };
 
-export default tags;
+export default getTags;

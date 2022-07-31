@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import profile from "../../api/getProfile";
+import getProfile from "../../api/getProfile";
 import "./style/ModalProfile.css";
 
 const ModalProfile = ({ id, isOpenProfile }) => {
@@ -14,7 +14,7 @@ const ModalProfile = ({ id, isOpenProfile }) => {
 
   useEffect(() => {
     if (isOpenProfile) {
-      profile(id, setResponse, setError);
+      getProfile(id, setResponse, setError);
     }
   }, [id, isOpenProfile]);
 

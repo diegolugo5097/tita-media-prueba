@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from "react";
-import tags from "../../api/getTags";
+import getTags from "../../api/getTags";
 import "./style/Tag.css";
 import { useRecoilState } from "recoil";
 import { stateTag } from "./../../recoil/atoms";
@@ -26,7 +26,7 @@ const Tag = () => {
 
   useEffect(() => {
     if (!control) {
-      tags(setResponse, setError);
+      getTags(setResponse, setError);
     }
   }, [control, setResponse]);
 

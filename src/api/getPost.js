@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const posting = (setResponse, setError) => {
+const getPost = (setResponse, setError) => {
   axios
     .get("https://dummyapi.io/data/v1/post?limit=10", {
       headers: {
@@ -13,4 +13,4 @@ const posting = (setResponse, setError) => {
     .catch((err) => setError(err));
 };
 
-export default posting;
+export default getPost;

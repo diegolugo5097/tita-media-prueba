@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const profile = (id, setResponse, setError) => {
+const getProfile = (id, setResponse, setError) => {
   axios
     .get(`https://dummyapi.io/data/v1/user/${id}`, {
       headers: {
@@ -13,4 +13,4 @@ const profile = (id, setResponse, setError) => {
     .catch((err) => setError(err));
 };
 
-export default profile;
+export default getProfile;
